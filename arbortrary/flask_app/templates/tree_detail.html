@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Tree Details</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <h1 class="navbar-brand">Arbortrary</h1>
+    
+        <span class="navbar-text d-none d-lg-block">
+          A site to track randomly planted trees
+        </span>
+        <div class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="/user/account">My Trees</a>
+            </li>
+          </ul>
+          <div class="navbar-header">
+            <h5 class="navbar-text">Welcome {{user.first_name}}!</h5>
+            <div class="btn-group m1-2">
+              <a href="/dashboard" class="btn btn-success">Dashboard</a>
+              <a href="/logout" class="btn btn-danger">Logout</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ tree.species }} planted by {{ user.first_name }} {{ user.last_name }} </h5>
+          <p class="card-text">Where: {{ tree.location }}</p>
+          <p class="card-text">When: {{ tree.date_planted }}</p>
+          <p class="card-text">Reason: {{ tree.reason }}</p>
+        </div>
+      </div>
+
+
+        
+</body>
+</html>

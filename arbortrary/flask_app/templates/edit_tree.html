@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Edit Tree</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <h1 class="navbar-brand">Arbortrary</h1>
+    
+        <span class="navbar-text d-none d-lg-block">
+          A site to track randomly planted trees
+        </span>
+    
+        <div class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="/user/account">My Trees</a>
+            </li>
+          </ul>
+          <div class="navbar-header">
+            <h5 class="navbar-text">Welcome {{user.first_name}}!</h5>
+            <div class="btn-group m1-2">
+              <a href="/dashboard" class="btn btn-success">Dashboard</a>
+              <a href="/logout" class="btn btn-danger">Logout</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-mt-5">
+        <form action="/tree/update/{{tree.id}}" method="post">
+          <div class="form-group">
+            <label for="species">Species:</label>
+            <input type="text" name="species" class="form-control" value="{{tree.species}}">
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" name="location" class="form-control" value="{{tree.location}}">
+          </div>
+
+          <div class="form-group">
+            <label for="reason">Reason:</label>
+            <input type="text" name="reason" class="form-control" value="{{tree.reason}}">
+          </div>
+
+          <div class="form-group">
+            <label for="date_planted">Date Planted:</label>
+            <input type="date" name="date_planted" class="form-control" value="{{tree.date_planted}}">
+          </div>
+        
+
+          <input type="submit" value="Update" class="btn btn-success">
+        </form>
+      </div>
+        
+</body>
+</html>
